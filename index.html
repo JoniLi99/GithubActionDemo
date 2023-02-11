@@ -1,0 +1,189 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>I'm a React app!</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.6.3/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.6.3/umd/react-dom.production.min.js"></script>
+    <script>
+      // The `React` variable is set by the first `<script>` tag
+      // in the above HTML file.
+      let createElement = React.createElement
+
+      let rootElement =
+        createElement('div', {}, 
+          createElement('h1', {}, "Contacts"),
+          createElement('ul', {},
+            createElement(
+              'li',
+              {},
+              createElement(
+                'a',
+                { href: 'mailto:james@frontarm.com' },
+                "James Nelson",
+              ),
+            ),
+            createElement(
+              'li',
+              {},
+              createElement(
+                'a',
+                { href: 'mailto:me@example.com' },
+                "Me"
+              )
+            )
+          )
+        )
+
+      // The `ReactDOM` variable is set by the second `<script>` tag
+      // in the above HTML file
+      let domNode = document.getElementById('root')
+      ReactDOM.render(rootElement, domNode)
+    </script>
+  </body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html> -->
+<!-- <html>
+<head>
+  <title>Upload File to GitHub</title>
+</head>
+<body> -->
+  <!-- include the Octokit library -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@octokit/rest/dist/octokit-rest.js"></script>
+  <button id="upload-button">Upload File</button>
+
+  <script>
+    const Octokit = window.Octokit;
+
+    async function uploadFile(owner, repo, path, content) {
+      const octokit = new Octokit({
+        auth: "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"
+      });
+
+      const response = await octokit.repos.createOrUpdateFileContents({
+        owner,
+        repo,
+        path,
+        message: "Uploading a file using Octokit",
+        content: content,
+        branch: "main"
+      });
+
+      console.log(response.data);
+    }
+
+    document.getElementById("upload-button").addEventListener("click", () => {
+      const fileInput = document.createElement("input");
+      fileInput.setAttribute("type", "file");
+      fileInput.setAttribute("style", "display: none;");
+      document.body.appendChild(fileInput);
+
+      fileInput.addEventListener("change", () => {
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+
+        reader.onload = () => {
+          const content = reader.result.split(",")[1];
+          uploadFile("JoniLi99", "DomainWordExtractor", "Joni.txt", content);
+        };
+
+        reader.readAsDataURL(file);
+      });
+
+      fileInput.click();
+    });
+  </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Upload File to GitHub</title>
+</head>
+<body> -->
+  <!-- include the Octokit library -->
+  <!-- <script src="https://unpkg.com/@octokit/rest/dist/octokit-rest.js"></script>
+
+  <button id="upload-button">Upload File</button>
+
+  <script>
+    const Octokit = window.Octokit;
+    const octokit = new Octokit({
+      auth: "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"
+    });
+
+    async function uploadFile(owner, repo, path, content) {
+      const response = await octokit.repos.createOrUpdateFileContents({
+        owner,
+        repo,
+        path,
+        message: "Uploading a file using Octokit",
+        content: content,
+        branch: "main"
+      });
+
+      console.log(response.data);
+    }
+
+    document.getElementById("upload-button").addEventListener("click", () => {
+      const input = document.createElement("input");
+      input.type = "file";
+      input.accept = "text/plain";
+      input.addEventListener("change", () => {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          uploadFile("JoniLi99", "DomainWordExtractor", "Joni.txt", btoa(event.target.result));
+        };
+        reader.readAsText(input.files[0]);
+      });
+      input.click();
+    });
+  </script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Untitled App</title>
+    <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
+    
+    <script type="module">
+      import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="index.js"></script>
+    <form>
+      <input type="file" id="fileInput">
+      <button type="submit" id="uploadButton">Upload File</button>
+    </form>
+  </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Uploader</title>
+  </head>
+  <body>
+    <h1>File Uploader</h1>
+    <input type="file" id="fileInput" />
+    <button id="uploadButton">Upload file</button>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>
