@@ -135,6 +135,7 @@
 
 
 
+// CORRECT SOLUTION: extract the file from the repository
 // const axios = require('axios');
 
 // async function getFileContent(repo, path) {
@@ -151,7 +152,7 @@
 
 
 
-// CORRECT SOLUTION !!!!!
+// CORRECT SOLUTION: upload the file to the repository
 const axios = require("axios");
 const fs = require("fs");
 
@@ -212,7 +213,7 @@ uploadFile(
   "DomainWordExtractor",
   "JoniLi99",
   "main",
-  "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"
+  "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"
 );
 
 
